@@ -10,7 +10,7 @@ function init() {
     os = detectOSSimply();
     if (os == "iphone") {
         // safari用。DeviceOrientation APIの使用をユーザに許可して貰う
-        // document.querySelector("#permit").addEventListener("click", permitDeviceOrientationForSafari);
+        document.querySelector("#permit").addEventListener("click", permitDeviceOrientationForSafari);
 
         window.addEventListener(
             "deviceorientation",
@@ -26,10 +26,6 @@ function init() {
     } else{
         window.alert("PC未対応");
     }
-
-    document.body.insertAdjacentHTML("beforeend",
-            `<p id="test">test</p>`
-        );
 }
 
 
@@ -71,7 +67,7 @@ function permitDeviceOrientationForSafari() {
 var aX = 0, aY = 0, aZ = 0;      // 加速度の値を入れる変数を3個用意
 
 let flag = false;
-alert("更新7");
+alert("更新8");
 
 // 加速度センサの値が変化したら実行される devicemotion イベント
 window.addEventListener("devicemotion", (dat) => {
@@ -94,10 +90,7 @@ window.addEventListener("devicemotion", (dat) => {
         //         <a-gltf-model  id="test" src="./model/map.glb"  position="0 -1 0" rotation="0 0 0" scale="8 8 8"></a-gltf-model>
         //         <a-sky color="#9EA1E7"></a-sky>
         //     </a-scene>`
-        // );
-        document.body.insertAdjacentHTML("beforeend",
-            `<p id="test">検出</p>`
-        );
+        // )
     };
 
 });
