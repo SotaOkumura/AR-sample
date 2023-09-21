@@ -134,7 +134,7 @@ function init() {
           //関数mainをDOM構築完了後に読み込む
           // window.addEventListener('DOMContentLoaded',main,false);
     const cameraNode = document.getElementById("camera");
-    cameraNode.parentNode.removeChild(camera);
+    cameraNode.parentNode.removeChild(cameraNode);
 }
 
 
