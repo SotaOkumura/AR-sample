@@ -63,6 +63,7 @@ function init() {
             directionalLight.position.set( 0, 0.7, 0.7); //光源の角度
             scene.add(directionalLight);
            
+            /*
           //geometry(形状)とmaterial(素材)を元に物体(Mesh)を作成
             var geometry = new THREE.Geometry();
             geometry.vertices.push(new THREE.Vector3(0,0,4)); //頂点の作成
@@ -86,7 +87,22 @@ function init() {
           //素材と形状からメッシュを作成
             var material = new THREE.MeshNormalMaterial();
             var mesh = new THREE.Mesh(geometry,material);
-            scene.add(mesh);
+            */
+            const loader = new GLTFLoader();
+ 
+            loader.load('./model/map.glb', function(gltf) {
+                model = gltf.scene;
+                model.traverse((object) => { //モデルの構成要素
+                    if(object.isMesh) { //その構成要素がメッシュだったら
+                    object.material.trasparent = true;//透明許可
+                    object.material.opacity = 0.8;//透過
+                    object.material.depthTest = true;//陰影で消える部分
+                    }})
+                scene.add(model);
+            }, undefined, function(e) {
+                console.error(e);
+            });
+            // scene.add(mesh);
            
             var wire = new THREE.MeshBasicMaterial({color: 0xffffff, wireframe: true});
             var wireMesh = new THREE.Mesh(geometry,wire);//同じ形状からワイヤーも作成
