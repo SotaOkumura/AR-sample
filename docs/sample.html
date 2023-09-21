@@ -20,12 +20,12 @@
         aX = dat.accelerationIncludingGravity.x;    // x軸の重力加速度（Android と iOSでは正負が逆）
         aY = dat.accelerationIncludingGravity.y;    // y軸の重力加速度（Android と iOSでは正負が逆）
         aZ = dat.accelerationIncludingGravity.z;    // z軸の重力加速度（Android と iOSでは正負が逆）
-  
+        
         let X=Math.abs(aX);
         let Z=Math.abs(aZ);
+        alert("加速度の検知",aX,aY,aZ,X,Z);
   
-  
-        if(X>=2 || Z>=2) flag = true;
+        if(X>=1 || Z>=1) flag = true;
   
   
         if(flag){
