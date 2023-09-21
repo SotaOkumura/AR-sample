@@ -26,6 +26,10 @@ function init() {
     } else{
         window.alert("PC未対応");
     }
+
+    document.body.insertAdjacentHTML("beforeend",
+            `<p id="test">test</p>`
+        );
 }
 
 
@@ -67,10 +71,7 @@ function permitDeviceOrientationForSafari() {
 var aX = 0, aY = 0, aZ = 0;      // 加速度の値を入れる変数を3個用意
 
 let flag = false;
-alert("更新6");
-document.body.insertAdjacentHTML("beforeend",
-            `<p id="test">test</p>`
-        );
+alert("更新7");
 
 // 加速度センサの値が変化したら実行される devicemotion イベント
 window.addEventListener("devicemotion", (dat) => {
