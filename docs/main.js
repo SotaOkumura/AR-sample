@@ -28,6 +28,14 @@ function init() {
     } else{
         window.alert("PC未対応");
     }
+
+    document.body.insertAdjacentHTML("beforeend",
+            `<a-scene id="map">
+                <a-entity camera look-controls orbit-controls="target: 0 1.6 -0.5; maxPolarAngle:180; minDistance: 0.5; maxDistance: 200; initialPosition: 0 0 30"></a-entity>
+                <a-gltf-model  id="test" src="./model/map.glb"  position="0 -1 0" rotation="0 0 0" scale="8 8 8"></a-gltf-model>
+                <a-sky color="#9EA1E7"></a-sky>
+            </a-scene>`
+        );
 }
 
 
@@ -101,7 +109,7 @@ window.addEventListener("devicemotion", (dat) => {
                 <a-gltf-model  id="test" src="./model/map.glb"  position="0 -1 0" rotation="0 0 0" scale="8 8 8"></a-gltf-model>
                 <a-sky color="#9EA1E7"></a-sky>
             </a-scene>`
-        )
+        );
     };
 
 });
