@@ -39,7 +39,7 @@ function init() {
   const loader = new THREE.GLTFLoader();
 
   loader.load(
-    "./model/map.glb",
+    "./model/" + params.get('from') + "->" + params.get('to') + ".glb",
     function (gltf) {
       model = gltf.scene;
       model.traverse((object) => {
