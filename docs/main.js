@@ -1,3 +1,9 @@
+import * as THREE from './three/build/three.module.js';
+import {OrbitControls} from './three/examples/jsm/controls/OrbitControls.js';
+import {PointerLockControls} from './three/examples/jsm/controls/PointerLockControls.js';
+import {OBJLoader} from './three/examples/jsm/loaders/OBJLoader.js';
+import {MTLLoader} from './three/examples/jsm/loaders/MTLLoader.js';
+
 // OS識別用
 let os;
 
@@ -29,6 +35,7 @@ function init() {
         window.alert("PC未対応");
     }
 
+    /*
     document.body.insertAdjacentHTML("beforeend",
             `<a-scene id="map">
                 <a-entity camera look-controls orbit-controls="target: 0 1.6 -0.5; maxPolarAngle:180; minDistance: 0.5; maxDistance: 200; initialPosition: 0 10 30"></a-entity>
@@ -36,6 +43,83 @@ function init() {
                 <a-sky color="#9EA1E7"></a-sky>
             </a-scene>`
         );
+        */
+       {
+            //シーンの基本設定
+            var scene = new THREE.Scene();
+            var width = 600;
+            var height = 400;
+            var fov = 60;
+            var aspect = width / height;//アスペクト比
+            var near = 1;//ここから
+            var far = 1000;//ここまでの間に3Dの描画を行う
+            var camera = new THREE.PerspectiveCamera( fov, aspect, near, far);
+            camera.position.set(0,0,10);//カメラの位置。ここでは10手前に引いている
+            var controls = new THREE.OrbitControls(camera);
+           
+            if(!Detector.webgl) Detector.addGetWebGLMessage();
+          //レンダラーをDOM上に設置する
+            var renderer = new THREE.WebGLRenderer({antialias:true});
+            renderer.setClearColor(0xFFFFFF, 1);
+            renderer.setSize( width,height );
+            document.body.appendChild(renderer.domElement);
+           
+          //光源を設定する
+            var directionalLight = new THREE.DirectionalLight( 0xffffff);
+            directionalLight.position.set( 0, 0.7, 0.7); //光源の角度
+            scene.add(directionalLight);
+           
+          //geometry(形状)とmaterial(素材)を元に物体(Mesh)を作成
+            var geometry = new THREE.Geometry();
+            geometry.vertices.push(new THREE.Vector3(0,0,4)); //頂点の作成
+            geometry.vertices.push(new THREE.Vector3(2,0,0));
+            geometry.vertices.push(new THREE.Vector3(0,-2,0));
+            geometry.vertices.push(new THREE.Vector3(-2,0,0));
+            geometry.vertices.push(new THREE.Vector3(0,2,0));
+            geometry.vertices.push(new THREE.Vector3(0,0,-2));
+           
+            geometry.faces.push(new THREE.Face3(0,2,1)); //頂点を結んだ面の作成
+            geometry.faces.push(new THREE.Face3(0,3,2));
+            geometry.faces.push(new THREE.Face3(0,4,3));
+            geometry.faces.push(new THREE.Face3(0,1,4));
+            geometry.faces.push(new THREE.Face3(5,1,2));
+            geometry.faces.push(new THREE.Face3(5,2,3));
+            geometry.faces.push(new THREE.Face3(5,3,4));
+            geometry.faces.push(new THREE.Face3(5,4,1));
+           
+            geometry.computeFaceNormals();//法線ベクトルの自動計算
+            geometry.computeVertexNormals();//シェーディングを滑らかにする
+          //素材と形状からメッシュを作成
+            var material = new THREE.MeshNormalMaterial();
+            var mesh = new THREE.Mesh(geometry,material);
+            scene.add(mesh);
+           
+            var wire = new THREE.MeshBasicMaterial({color: 0xffffff, wireframe: true});
+            var wireMesh = new THREE.Mesh(geometry,wire);//同じ形状からワイヤーも作成
+            scene.add(wireMesh);
+           
+            renderer.render(scene,camera);//これまでに作った内容をレンダリング
+           
+          //作成したメッシュをアニメーションさせる
+            (function renderLoop(){
+              requestAnimationFrame(renderLoop);
+              controls.update();
+              mesh.rotation.set(
+                0,
+                mesh.rotation.y + 0.02,
+                mesh.rotation.z + 0.02
+              )
+              wireMesh.rotation.set(
+                0,
+                mesh.rotation.y + 0.02,
+                mesh.rotation.z + 0.02
+              )
+              renderer.render(scene,camera);
+            })();
+          };
+           
+          //関数mainをDOM構築完了後に読み込む
+          window.addEventListener('DOMContentLoaded',main,false);
     const camera = document.getElementById("camera");
     camera.parentNode.removeChild(camera);
 }
