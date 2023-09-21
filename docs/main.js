@@ -112,6 +112,7 @@ function init() {
             renderer.render(scene,camera);//これまでに作った内容をレンダリング
            
           //作成したメッシュをアニメーションさせる
+          /*
             (function renderLoop(){
               requestAnimationFrame(renderLoop);
               controls.update();
@@ -127,6 +128,7 @@ function init() {
               )
               renderer.render(scene,camera);
             })();
+            */
           };
            
           //関数mainをDOM構築完了後に読み込む
