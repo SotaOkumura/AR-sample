@@ -104,7 +104,7 @@ window.addEventListener("devicemotion", (dat) => {
     //     cnt = 0;
     // }
 
-    if((X>=4 || Z>=4) && flag == 0) flag = 1;
+    if((X>=4 || Z>=11) && flag == 0) flag = 1;
 
 
     if(flag == 1){
