@@ -17,14 +17,14 @@
 	    
       <!-- 3DCGモデルを読み込む -->
       <a-assets>
-        <a-asset-item id="arrow" src="docs/allowmak.blender.glb"></a-asset-item>
+        <a-asset-item id="arrow" src="./allowmak.blender.glb"></a-asset-item>
       </a-assets>
       <!-- 以下の行はバグっている可能性あり -->
       <a-entity gltf-model="#arrow"></a-entity>
 
       <!-- マーカーの.pattファイルを読み込む -->
       <!-- 以下のサイトで変更可　https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/generator.html -->
-      <a-marker type="pattern" url="docs/pattern-QR_264737.patt">
+      <a-marker type="pattern" url="./pattern-QR_264737.patt">
         <!-- 3Dモデルを呼び出す -->
         <a-entity gltf-model="#arrow"></a-entity>
       </a-marker>
