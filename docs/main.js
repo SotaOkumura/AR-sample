@@ -48,7 +48,7 @@ function init() {
             var near = 1;//ここから
             var far = 1000;//ここまでの間に3Dの描画を行う
             var camera = new THREE.PerspectiveCamera( fov, aspect, near, far);
-            camera.position.set(0,0,1000);//カメラの位置。ここでは10手前に引いている
+            camera.position.set(100,100,100);//カメラの位置。ここでは10手前に引いている
            
             // if(!Detector.webgl) Detector.addGetWebGLMessage();
           //レンダラーをDOM上に設置する
