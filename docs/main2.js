@@ -1,4 +1,4 @@
-console.log(params.get('from'))
+
 
 window.addEventListener("DOMContentLoaded", init);
 
