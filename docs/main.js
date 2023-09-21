@@ -105,9 +105,9 @@ function init() {
             });
             // scene.add(mesh);
            
-            var wire = new THREE.MeshBasicMaterial({color: 0xffffff, wireframe: true});
-            var wireMesh = new THREE.Mesh(geometry,wire);//同じ形状からワイヤーも作成
-            scene.add(wireMesh);
+            // var wire = new THREE.MeshBasicMaterial({color: 0xffffff, wireframe: true});
+            // var wireMesh = new THREE.Mesh(geometry,wire);//同じ形状からワイヤーも作成
+            // scene.add(wireMesh);
            
             renderer.render(scene,camera);//これまでに作った内容をレンダリング
            
