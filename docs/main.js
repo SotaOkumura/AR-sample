@@ -77,10 +77,10 @@ function detectOSSimply() {
 var aX = 0, aY = 0, aZ = 0;      // 加速度の値を入れる変数を3個用意
 
 let flag = 0;
-alert("更新10");
+alert("更新11");
 
-let str = "";
-let cnt = 0;
+// let str = "";
+// let cnt = 0;
 
 // 加速度センサの値が変化したら実行される devicemotion イベント
 window.addEventListener("devicemotion", (dat) => {
@@ -90,12 +90,12 @@ window.addEventListener("devicemotion", (dat) => {
 
     let X=Math.abs(aX);
     let Z=Math.abs(aZ);
-    str += `[${X},${Z}],`;
-    cnt ++;
-    if(cnt == 20){
-        alert(str);
-        cnt = 0;
-    }
+    // str += `[${X},${Z}],`;
+    // cnt ++;
+    // if(cnt == 20){
+    //     alert(str);
+    //     cnt = 0;
+    // }
 
     if((X>=2 || Z>=2) && flag == 0) flag = 1;
 
