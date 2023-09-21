@@ -89,7 +89,7 @@ function init() {
             var material = new THREE.MeshNormalMaterial();
             var mesh = new THREE.Mesh(geometry,material);
             */
-            const loader = new GLTFLoader();
+            const loader = new THREE.GLTFLoader();
  
             loader.load('./model/map.glb', function(gltf) {
                 model = gltf.scene;
