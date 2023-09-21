@@ -110,6 +110,12 @@ function init() {
             // scene.add(wireMesh);
            
             renderer.render(scene,camera);//これまでに作った内容をレンダリング
+            
+            (function renderLoop(){
+                requestAnimationFrame(renderLoop);
+                controls.update();
+                renderer.render(scene,camera);
+              })();
            
           //作成したメッシュをアニメーションさせる
           /*
