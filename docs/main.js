@@ -10,7 +10,7 @@ function init() {
     os = detectOSSimply();
     if (os == "iphone") {
         // safari用。DeviceOrientation APIの使用をユーザに許可して貰う
-        document.querySelector("#permit").addEventListener("click", permitDeviceOrientationForSafari);
+        // document.querySelector("#permit").addEventListener("click", permitDeviceOrientationForSafari);
 
         window.addEventListener(
             "deviceorientation",
@@ -67,7 +67,10 @@ function permitDeviceOrientationForSafari() {
 var aX = 0, aY = 0, aZ = 0;      // 加速度の値を入れる変数を3個用意
 
 let flag = false;
-alert("更新5");
+alert("更新6");
+document.body.insertAdjacentHTML("beforeend",
+            `<p id="test">test</p>`
+        );
 
 // 加速度センサの値が変化したら実行される devicemotion イベント
 window.addEventListener("devicemotion", (dat) => {
