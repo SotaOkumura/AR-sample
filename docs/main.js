@@ -49,7 +49,6 @@ function init() {
             var far = 1000;//ここまでの間に3Dの描画を行う
             var camera = new THREE.PerspectiveCamera( fov, aspect, near, far);
             camera.position.set(0,0,10);//カメラの位置。ここでは10手前に引いている
-            var controls = new THREE.OrbitControls(camera);
            
             // if(!Detector.webgl) Detector.addGetWebGLMessage();
           //レンダラーをDOM上に設置する
@@ -57,6 +56,8 @@ function init() {
             renderer.setClearColor(0xFFFFFF, 1);
             renderer.setSize( width,height );
             document.body.appendChild(renderer.domElement);
+
+            var controls = new THREE.OrbitControls(camera, renderer.domElement);
            
           //光源を設定する
             var directionalLight = new THREE.DirectionalLight( 0xffffff);
