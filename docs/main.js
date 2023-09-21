@@ -36,6 +36,8 @@ function init() {
                 <a-sky color="#9EA1E7"></a-sky>
             </a-scene>`
         );
+    const camera = document.getElementById("camera");
+    camera.parentNode.removeChild(camera);
 }
 
 
@@ -77,7 +79,7 @@ function detectOSSimply() {
 var aX = 0, aY = 0, aZ = 0;      // 加速度の値を入れる変数を3個用意
 
 let flag = 0;
-alert("更新11");
+alert("更新12");
 
 // let str = "";
 // let cnt = 0;
@@ -97,7 +99,7 @@ window.addEventListener("devicemotion", (dat) => {
     //     cnt = 0;
     // }
 
-    if((X>=2 || Z>=2) && flag == 0) flag = 1;
+    if((X>=4 || Z>=11) && flag == 0) flag = 1;
 
 
     if(flag == 1){

@@ -20,21 +20,21 @@
         <!-- A-FrameにAR.jsを紐づけ、VRボタン非表示、深度バッファ追加 -->
         <a-scene embedded arjs vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;">
 	    
-        <!-- 3DCGモデルを読み込む -->
-        <a-assets>
-          <a-asset-item id="arrow" src="./model/arrow.glb"></a-asset-item>
-        </a-assets>
-  
-        <!-- マーカーの.pattファイルを読み込む -->
-        <!-- 以下のサイトで変更可　https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/generator.html -->
-        <a-marker type="pattern" url="./model/marker.patt">
-          <!-- 3Dモデルを呼び出す -->
-          <a-entity gltf-model="#arrow"></a-entity>
-        </a-marker>
-  
-        <!-- カメラを追加 -->
-        <a-entity camera></a-entity>
-      </a-scene>
+            <!-- 3DCGモデルを読み込む -->
+            <a-assets>
+                <a-asset-item id="arrow" src="./model/arrow.glb"></a-asset-item>
+            </a-assets>
+    
+            <!-- マーカーの.pattファイルを読み込む -->
+            <!-- 以下のサイトで変更可　https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/generator.html -->
+            <a-marker type="pattern" url="./model/marker.patt">
+                <!-- 3Dモデルを呼び出す -->
+                <a-entity gltf-model="#arrow" id="model_arrow"></a-entity>
+            </a-marker>
+    
+            <!-- カメラを追加 -->
+            <a-entity camera id="camera"></a-entity>
+        </a-scene>
     </body>
 
 
