@@ -104,21 +104,13 @@ window.addEventListener("devicemotion", (dat) => {
     //     cnt = 0;
     // }
 
-    if((X>=4 || Z>=11) && flag == 0) flag = 1;
+    if((X>=4 || Z>=4) && flag == 0) flag = 1;
 
 
     if(flag == 1){
         flag *= -1; //flag 1->-1
         alert("移動が検知されたため3Dマップを表示します");
-        document.body.insertAdjacentHTML("beforeend",
-             `<a-scene>
-                 <a-entity camera look-controls orbit-controls="target: 0 1.6 -0.5; maxPolarAngle:180; minDistance: 0.5; maxDistance: 200; initialPosition: 0 0 30"></a-entity>
-                 <a-gltf-model  id="test" src="./model/map.glb"  position="0 -1 0" rotation="0 0 0" scale="8 8 8"></a-gltf-model>
-                 <a-sky color="#9EA1E7"></a-sky>
-             </a-scene>`
-         );
-         const camera = document.getElementById("camera");
-         camera.parentNode.removeChild(camera);
+        window.location.href = "./3d.html?from=1&to=2"
     };
 
 });
