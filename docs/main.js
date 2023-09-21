@@ -1,9 +1,3 @@
-import * as THREE from './three/build/three.module.js';
-import {OrbitControls} from './three/examples/jsm/controls/OrbitControls.js';
-import {PointerLockControls} from './three/examples/jsm/controls/PointerLockControls.js';
-import {OBJLoader} from './three/examples/jsm/loaders/OBJLoader.js';
-import {MTLLoader} from './three/examples/jsm/loaders/MTLLoader.js';
-
 // OS識別用
 let os;
 
@@ -57,7 +51,7 @@ function init() {
             camera.position.set(0,0,10);//カメラの位置。ここでは10手前に引いている
             var controls = new THREE.OrbitControls(camera);
            
-            if(!Detector.webgl) Detector.addGetWebGLMessage();
+            // if(!Detector.webgl) Detector.addGetWebGLMessage();
           //レンダラーをDOM上に設置する
             var renderer = new THREE.WebGLRenderer({antialias:true});
             renderer.setClearColor(0xFFFFFF, 1);
@@ -119,7 +113,7 @@ function init() {
           };
            
           //関数mainをDOM構築完了後に読み込む
-          window.addEventListener('DOMContentLoaded',main,false);
+          // window.addEventListener('DOMContentLoaded',main,false);
     const camera = document.getElementById("camera");
     camera.parentNode.removeChild(camera);
 }
