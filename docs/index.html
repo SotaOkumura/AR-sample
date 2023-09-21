@@ -5,6 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <link rel="stylesheet" type="text/css" href="style.css">
+
+        <!-- three.jsの読み込み -->
+        <script src="https://unpkg.com/three@0.147.0/build/three.min.js"></script>
+        <script src="https://unpkg.com/three@0.147.0/examples/js/loaders/GLTFLoader.js"></script>
+        <script src="https://unpkg.com/three@0.147.0/examples/js/controls/OrbitControls.js" defer></script>
+
         <!-- A-Frame を読み込む -->
         <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
         <!-- AR.js を読み込む -->
@@ -12,10 +18,6 @@
         <script src="https://unpkg.com/aframe-orbit-controls@1.4.0/dist/aframe-orbit-controls.min.js"></script>
         <!-- 以下は要変更 -->
         <title>Document</title>
-
-        <script src="https://unpkg.com/three@0.147.0/build/three.min.js"></script>
-        <script src="https://unpkg.com/three@0.147.0/examples/js/loaders/GLTFLoader.js"></script>
-        <script src="https://unpkg.com/three@0.147.0/examples/js/controls/OrbitControls.js" defer></script>
         <script src="./main.js"></script>
     </head>
     <body style="margin: 0; overflow: hidden">
