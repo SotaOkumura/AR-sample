@@ -31,8 +31,8 @@ function init() {
 
     document.body.insertAdjacentHTML("beforeend",
             `<a-scene id="map">
-                <a-entity camera look-controls orbit-controls="target: 0 1.6 -0.5; maxPolarAngle:180; minDistance: 0.5; maxDistance: 200; initialPosition: 0 0 30"></a-entity>
-                <a-gltf-model  id="test" src="./model/map.glb"  position="0 -1 0" rotation="0 0 0" scale="8 8 8"></a-gltf-model>
+                <a-entity camera look-controls orbit-controls="target: 0 1.6 -0.5; maxPolarAngle:180; minDistance: 0.5; maxDistance: 200; initialPosition: 0 10 30"></a-entity>
+                <a-gltf-model src="./model/map.glb"  position="0 -1 0" rotation="0 0 0" scale="8 8 8"></a-gltf-model>
                 <a-sky color="#9EA1E7"></a-sky>
             </a-scene>`
         );
@@ -105,13 +105,15 @@ window.addEventListener("devicemotion", (dat) => {
     if(flag == 1){
         flag *= -1; //flag 1->-1
         alert("検知");
-        document.body.insertAdjacentHTML("beforeend",
-            `<a-scene>
-                <a-entity camera look-controls orbit-controls="target: 0 1.6 -0.5; maxPolarAngle:180; minDistance: 0.5; maxDistance: 200; initialPosition: 0 0 30"></a-entity>
-                <a-gltf-model  id="test" src="./model/map.glb"  position="0 -1 0" rotation="0 0 0" scale="8 8 8"></a-gltf-model>
-                <a-sky color="#9EA1E7"></a-sky>
-            </a-scene>`
-        );
+        // document.body.insertAdjacentHTML("beforeend",
+        //     `<a-scene>
+        //         <a-entity camera look-controls orbit-controls="target: 0 1.6 -0.5; maxPolarAngle:180; minDistance: 0.5; maxDistance: 200; initialPosition: 0 0 30"></a-entity>
+        //         <a-gltf-model  id="test" src="./model/map.glb"  position="0 -1 0" rotation="0 0 0" scale="8 8 8"></a-gltf-model>
+        //         <a-sky color="#9EA1E7"></a-sky>
+        //     </a-scene>`
+        // );
+        // const camera = document.getElementById("camera");
+        // camera.parentNode.removeChild(camera);
     };
 
 });
