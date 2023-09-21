@@ -38,8 +38,10 @@ function init() {
 
   const loader = new THREE.GLTFLoader();
 
+  const searchParams = new URLSearchParams(window.location.search)
+
   loader.load(
-    "./model/" + params.get('from') + "->" + params.get('to') + ".glb",
+    "./model/" + searchParams.get('from') + "->" + searchParams.get('to') + ".glb",
     function (gltf) {
       model = gltf.scene;
       model.traverse((object) => {
