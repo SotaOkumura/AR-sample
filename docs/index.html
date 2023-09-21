@@ -98,11 +98,13 @@
 
 
             if(flag){
-                document.body.insertAdjacentHTML("beforeend",`<a-scene>
-            <a-entity camera look-controls orbit-controls="target: 0 1.6 -0.5; maxPolarAngle:180; minDistance: 0.5; maxDistance: 200; initialPosition: 0 0 30"></a-entity>
-            <a-gltf-model  id="test" src="assets/3dMap.blend AR.glb"  position="0 -1 0" rotation="0 0 0" scale="8 8 8"></a-gltf-model>
-            <a-sky color="#9EA1E7"></a-sky>
-            </a-scene>`);
+                document.body.insertAdjacentHTML("beforeend",
+                    `<a-scene>
+                        <a-entity camera look-controls orbit-controls="target: 0 1.6 -0.5; maxPolarAngle:180; minDistance: 0.5; maxDistance: 200; initialPosition: 0 0 30"></a-entity>
+                        <a-gltf-model  id="test" src="docs/3dMap.blend AR.glb"  position="0 -1 0" rotation="0 0 0" scale="8 8 8"></a-gltf-model>
+                        <a-sky color="#9EA1E7"></a-sky>
+                    </a-scene>`
+                );
             };
 
             });
@@ -120,14 +122,14 @@
 	    
         <!-- 3DCGモデルを読み込む -->
         <a-assets>
-          <a-asset-item id="arrow" src="./asset/arrow.glb"></a-asset-item>
+          <a-asset-item id="arrow" src="docs/allowmak.blender.glb"></a-asset-item>
         </a-assets>
         <!-- 以下の行はバグっている可能性あり -->
         <a-entity gltf-model="#arrow"></a-entity>
   
         <!-- マーカーの.pattファイルを読み込む -->
         <!-- 以下のサイトで変更可　https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/generator.html -->
-        <a-marker type="pattern" url="./asset/pattern-marker.patt">
+        <a-marker type="pattern" url="docs/pattern-QR_264737.patt">
           <!-- 3Dモデルを呼び出す -->
           <a-entity gltf-model="#arrow"></a-entity>
         </a-marker>
