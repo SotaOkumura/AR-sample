@@ -22,7 +22,7 @@ const searchParams = new URLSearchParams(window.location.search)
 // 初期化
 function init() {
 
-    document.getElementsById("arrow").setAttribute("src", 
+    document.getElementById("arrow").setAttribute("src", 
     "./model/arrow_" + arrow[decodeURI(searchParams.get('from'))][decodeURI(searchParams.get('to'))] + ".glb"
     )
 
