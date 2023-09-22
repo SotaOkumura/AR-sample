@@ -1,5 +1,3 @@
-//　116行目とファイル名の変更が必要
-
 
 // OS識別用
 let os;
@@ -130,7 +128,7 @@ window.addEventListener("devicemotion", (dat) => {
     if(flag == 1){
         flag *= -1; //flag 1->-1
         alert("移動が検知されたため3Dマップを表示します");
-        window.location.href = "./3D.html?from=数学&to=奇術"
+        window.location.href = "./3D.html?from=" + decodeURI(searchParams.get('from')) + "&to=" + decodeURI(searchParams.get('to'))
     };
 
 });
