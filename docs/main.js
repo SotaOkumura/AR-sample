@@ -1,3 +1,6 @@
+//　116行目とファイル名の変更が必要
+
+
 // OS識別用
 let os;
 
@@ -84,7 +87,7 @@ function detectOSSimply() {
 var aX = 0, aY = 0, aZ = 0;      // 加速度の値を入れる変数を3個用意
 
 let flag = 0;
-alert("更新12");
+
 
 // let str = "";
 // let cnt = 0;

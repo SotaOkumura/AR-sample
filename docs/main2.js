@@ -1,4 +1,4 @@
-
+//　変更の必要なし
 
 window.addEventListener("DOMContentLoaded", init);
 
