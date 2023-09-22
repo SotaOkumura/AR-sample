@@ -6,9 +6,9 @@ let os;
 window.addEventListener("DOMContentLoaded", init);
 
 const arrow = {
-    "数学" : {
-        "奇術": "left",
-        "講堂": "right"
+    "math" : {
+        "magic": "left",
+        "": "right"
     },
     "奇術" : {
         "数学" : "right"
@@ -21,7 +21,7 @@ const searchParams = new URLSearchParams(window.location.search)
 function init() {
 
     document.getElementById("arrow").setAttribute("src", 
-    "./model/arrow_" + arrow[decodeURI(searchParams.get('from'))][decodeURI(searchParams.get('to'))] + ".glb"
+    "./model/3Dmodel/arrow.glb_" + arrow[decodeURI(searchParams.get('from'))][decodeURI(searchParams.get('to'))] + ".glb"
     )
 
     // 簡易的なOS判定
