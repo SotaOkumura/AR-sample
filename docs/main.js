@@ -7,8 +7,25 @@ let os;
 // DOM構築完了イベントハンドラ登録
 window.addEventListener("DOMContentLoaded", init);
 
+const arrow = {
+    "数学" : {
+        "奇術": "left",
+        "講堂": "right"
+    },
+    "奇術" : {
+        "数学" : "right"
+    }
+}
+
+const searchParams = new URLSearchParams(window.location.search)
+
 // 初期化
 function init() {
+
+    document.getElementsById("arrow").setAttribute("src", 
+    "./model/arrow_" + arrow[decodeURI(searchParams.get('from'))][decodeURI(searchParams.get('to'))] + ".glb"
+    )
+
     // 簡易的なOS判定
     os = detectOSSimply();
     if (os == "iphone") {
@@ -117,3 +134,5 @@ window.addEventListener("devicemotion", (dat) => {
     };
 
 });
+
+  
